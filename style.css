@@ -230,7 +230,6 @@ body.menu-expanded button path {
 /*=== NAVIGATION =================================*/
 nav {
   display: flex;
-
   height: var(--nav-height);
   z-index: 100;
   position: fixed;
@@ -462,6 +461,61 @@ transition: 200ms;
   transform:translateY(0);
 }
 
+/*=== DEPOSITION ===========================*/
+
+#deposition .nocard{
+  text-align: left;
+  }
+  
+  #deposition .nocard h2{
+  font-weight: 700;
+  font-size: 4.0rem;
+  line-height: 5.2rem;
+  padding-bottom: 2.4rem;
+  }
+  
+  #deposition .nocard h4{
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08em;
+  padding-bottom: 1.6rem;
+  }
+  
+  #deposition .nocard p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+    padding-bottom:6.7rem;
+  }
+  
+  #deposition .card{
+    background-color: var(--brand-beige);
+    border-radius: 0.4rem;
+    padding: 3.2rem;
+    text-align: left;
+    margin-bottom: 3.2rem;
+  }
+  
+  #deposition .card p{
+    padding-bottom: 2.0rem;
+    padding-top: 2.0rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+  } 
+  
+  #deposition .card h4{
+   color:var(--primary-color);
+  }
+  
+  #deposition .avatar{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap:1.6rem;
+  }
+
 /*=== Custom Colors =================================*/
 
 #services .card circle{
@@ -538,7 +592,7 @@ section header h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
   }
 
   nav#navigation .menu ul:nth-child(1){
@@ -744,6 +798,66 @@ footer .col-b{
 
 footer p{
   margin-bottom: 0;
+}
+
+/*=== DEPOSITION =================================*/
+
+#deposition .nocard{
+text-align: left;
+}
+
+#deposition .nocard h2{
+font-weight: 700;
+font-size: 4.0rem;
+line-height: 5.2rem;
+padding-bottom: 2.4rem;
+}
+
+#deposition .nocard h4{
+font-weight: 700;
+font-size: 1.4rem;
+line-height: 150%;
+letter-spacing: 0.08em;
+padding-bottom: 1.6rem;
+}
+
+#deposition .nocard p{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+  padding-bottom:6.7rem;
+}
+
+#deposition .wrapper {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;  
+  gap:3.2rem; 
+}
+
+#deposition .card{
+  background-color: var(--brand-beige);
+  border-radius: 0.4rem;
+  padding: 3.2rem;
+  text-align: left;
+}
+
+#deposition .card p{
+  padding-bottom: 2.0rem;
+  padding-top: 2.0rem;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+} 
+
+#deposition .card h4{
+ color:var(--primary-color);
+}
+
+#deposition .avatar{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap:1.6rem;
 }
 
 }
