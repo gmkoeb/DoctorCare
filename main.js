@@ -64,6 +64,60 @@ function closeMenu() {
   document.body.classList.remove('menu-expanded')
 }
 
+function cardSwap(event) {
+  const el = event.target
+  let parent = el.parentElement
+  while (!parent.classList.contains('button')) {
+    parent = parent.parentElement
+  }
+  const selectedbutton = document.querySelector(`#deposition .button.selected`)
+  selectedbutton.classList.remove('selected')
+  parent.classList.add('selected')
+  let index = parseInt(parent.dataset.index)
+  const transition = document.querySelectorAll('#deposition .transition')
+  transition.forEach(transition => [transition.classList.add('hidden')])
+  transition[index].classList.remove('hidden')
+}
+
+let curSlide = 0
+
+const slides = document.querySelectorAll('.mobile')
+
+// loop through slides and set each slides translateX property to index * 100%
+slides.forEach((slide, indx) => {
+  slide.style.transform = `translateX(${indx * 100}%)`
+})
+
+// select next slide button
+const nextSlide = document.querySelector('.vector.forward')
+
+// add event listener and next slide functionality
+nextSlide.addEventListener('click', function () {
+  curSlide++
+
+  slides.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${35 * (indx - curSlide)}%)`
+  })
+})
+
+// select prev slide button
+const prevSlide = document.querySelector('.vector.backward')
+
+// add event listener and navigation functionality
+prevSlide.addEventListener('click', function () {
+  // check if current slide is the first and reset current slide to last
+  if (curSlide === 0) {
+    curSlide = maxSlide
+  } else {
+    curSlide--
+  }
+
+  //   move slide by 100%
+  slides.forEach((slide, indx) => {
+    slide.style.transform = `translateX(${35 * (indx - curSlide)}%)`
+  })
+})
+
 ScrollReveal({
   origin: 'top',
   distance: '30px',
@@ -77,4 +131,7 @@ ScrollReveal({
   #services .card
   #about, 
   #about header, 
-  #about .content`)
+  #about .content,
+  #deposition,
+  #deposition .cards, 
+  #deposition .logos`)
